@@ -11,20 +11,20 @@ class ProductProduct(models.Model):
     product_height = fields.Many2one(
         "product.measures",
         "height",
-        related="product_tmpl_id.product_height", 
-        readonly=False
+        readonly=False,
+        store=True
         )
     product_width = fields.Many2one(
         "product.measures",
         "width",
-        related="product_tmpl_id.product_width", 
-        readonly=False
+        readonly=False,
+        store=True
         )
     product_thickness = fields.Many2one(
         "product.measures",
         "thickness",
-        related="product_tmpl_id.product_thickness", 
-        readonly=False
+        readonly=False,
+        store=True
         )
     dimensional_uom_id = fields.Many2one(
         "uom.uom",

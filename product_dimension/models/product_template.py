@@ -20,21 +20,21 @@ class ProductTemplate(models.Model):
     product_height = fields.Many2one(
         "product.measures",
         "height",
-        related="product_measures_id.product_measures_length", 
+        related="product_variant_ids.product_height", 
         readonly=False,
         store=True
     )
     product_width = fields.Many2one(
         "product.measures",
         "width",
-        related="product_measures_id.product_measures_width", 
+        related="product_variant_ids.product_width", 
         readonly=False,
         store=True
     )
     product_thickness = fields.Many2one(
         "product.measures",
         "thickness",
-        related="product_measures_id.product_measures_thickness", 
+        related="product_variant_ids.product_thickness", 
         readonly=False,
         store=True
     )
@@ -43,10 +43,10 @@ class ProductTemplate(models.Model):
         readonly=False,
         store=True,
     )
-    product_measures_id = fields.One2many(
+    product_measures_id = fields.Many2one(
         "product.measures",
-        "product_template_id",
-        "ID de medidas del producto"
+        "Medidas del producto",
+        readonly=False
     )
     #volume_2 = fields.Float(
     #    compute="_compute_area",
